@@ -13,6 +13,11 @@
 
 <img src = https://github.com/jonique98/db-project/assets/104954561/94634156-f679-4ebc-980c-67bec276b626 />
 
+
+## ERD
+<img src = https://github.com/jonique98/db-project/assets/104954561/10ae05f4-11c0-45ab-8c40-a363a3e601e9 />
+
+
 ## 개발 환경
 - Python 3.8.5(BeautifulSoup4)
 - JavaScript ES6(Cheerio)

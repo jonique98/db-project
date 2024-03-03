@@ -3,10 +3,10 @@ const mysql = require('mysql');
 
 // MySQL 연결 정보
 const connection = mysql.createConnection({
-  host: "sumjo-database.cec1fez6orz0.ap-northeast-2.rds.amazonaws.com",
-  user: "admin",
-  password: "12345678",
-  database: "test"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 const titleSet = new Set();

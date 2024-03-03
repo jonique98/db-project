@@ -27,17 +27,17 @@ app.use(express.json())
 app.use(express.urlencoded({ extends: true}))
 
 const connection = mysql.createConnection({
-  host: 'sumjo-database.cec1fez6orz0.ap-northeast-2.rds.amazonaws.com',
-  user: 'admin',
-  password: '12345678',
-  database: 'test',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 const dbConfig = {
-  host: 'sumjo-database.cec1fez6orz0.ap-northeast-2.rds.amazonaws.com',
-  user: 'admin',
-  password: '12345678',
-  database: 'test',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 };
 
 connection.connect();
@@ -268,10 +268,10 @@ app.post('/my-list-upload', async (req, res) => {
 
 const executeQuery = (query, values, callback) => {
   const connection = mysql.createConnection({
-    host: 'sumjo-database.cec1fez6orz0.ap-northeast-2.rds.amazonaws.com',
-    user: 'admin',
-    password: '12345678',
-    database: 'test',
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
   });
 
   connection.connect((err) => {

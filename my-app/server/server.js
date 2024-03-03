@@ -3,6 +3,8 @@ const all_title_func = require('../src/database/all_title.js');
 const all_artist_func = require('../src/database/all_artist.js');
 const title_weight_func = require('../src/database/title_weight.js');
 
+require('dotenv').config();
+
 const rank = require('../src/database/rank.js');
 
 
@@ -30,14 +32,14 @@ const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  database: process.env.DB_DATABASE,
 });
 
 const dbConfig = {
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
+  database: process.env.DB_DATABASE,
 };
 
 connection.connect();
@@ -271,7 +273,7 @@ const executeQuery = (query, values, callback) => {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    database: process.env.DB_DATABASE,
   });
 
   connection.connect((err) => {
@@ -737,5 +739,4 @@ app.listen(port, () => {
     setTimeout(() => {
       title_weight_func();
     }, 15000);
-
 });
